@@ -1,0 +1,78 @@
+flutter_native_splash:
+  color: "#FFFFFF" ##====================================[REQUIRED]==========
+  color_dark: "#000000" ##================================[REQUIRED]==========
+  image: images/mood.png
+  image_dark: images/dark.png
+  branding: images/pranding 24.png
+  branding_dark: images/pranding 11.png
+
+  # branding_ios:          images/pranding 2.png
+  # branding_dark_ios:     images/pranding 1.png
+
+  # general branding for all platform (except android 12+):
+  # allows you to specify an image used as branding in the splash screen. should be png.
+  # platform-specific branding. will override general branding if active:
+  #branding_android:      assets/brand-android.png
+  #branding_dark_android: assets/dart_dark-android.png
+  #branding_web:          assets/brand-web.gif
+  #branding_dark_web:     assets/dart_dark-web.gif
+
+  # branding position:
+  # you can use bottom, bottomRight, and bottomLeft. The default values is
+  # bottom if not specified or specified something else.
+  #branding_mode: bottom                # default bottom
+  #branding_bottom_padding: 24          # default 0
+  #branding_bottom_padding_android: 24  # default 0
+  #branding_bottom_padding_ios: 24      # default 0
+  # branding bottom padding web is not available yet.
+
+  # The screen orientation can be set in Android with the android_screen_orientation parameter.
+  # Valid parameters can be found here:
+  # https://developer.android.com/guide/topics/manifest/activity-element#screen
+  #android_screen_orientation: sensorLandscape
+
+  # hide notif bar on android. ios already hides it by default.
+  # Has no effect in web since web has no notification bar.
+  fullscreen: true # default false
+  # if you dont want to hide notif bar, for android just set this to false,
+  # but for ios, add this to your flutter main():
+  # WidgetsFlutterBinding.ensureInitialized();
+  # SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top], );
+
+  #! extra note for IOS:
+  # If you have changed the name(s) of your info.plist file(s), you can specify the filename(s)
+  # with the info_plist_files parameter.  Remove only the # characters in the three lines below,
+  # do not remove any spaces:
+  #info_plist_files:
+  #  - 'ios/Runner/Info-Debug.plist'
+  #  - 'ios/Runner/Info-Release.plist'
+
+  #========================================================================
+
+  # what we did above won't affect Android 12 and newer at all. they have different
+  # handling concept. visit https://developer.android.com/guide/topics/ui/splash-screen
+
+  #! ANDROID 12+ configuration:
+  android_12:
+    # background color
+    color: "#FFFFFF"
+    color_dark: "#000000"
+
+    # center-logo
+    # If this parameter is not specified, the app's launcher icon will be used instead.
+    # Please note that the splash screen will be clipped to a circle on the center of the screen.
+    # with background: 960×960 px (fit within circle 640px in diameter)
+    # without background: 1152×1152 px (fit within circle 768px in diameter)
+    # ensure that the most important design elements of your image are placed within a circular area
+    image: images/mood.png
+    image_dark: images/dark.png
+    branding: images/pranding 25.png
+    branding_dark: images/pranding 12.png
+
+    # center-logo background color
+    icon_background_color: "#FFFFFF"
+    icon_background_color_dark: "#000000"
+
+    # branding:
+    # The branding image dimensions must be 800x320 px.
+    #dart run flutter_native_splash:create --path=splash.yaml
